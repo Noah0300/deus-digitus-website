@@ -5,6 +5,19 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteRule ^index\.html$ / [L,R=301]
+  RewriteRule ^pages/about\.html$ /over-ons [L,R=301]
+  RewriteRule ^pages/services\.html$ /diensten [L,R=301]
+  RewriteRule ^pages/contact\.html$ /contact [L,R=301]
+  RewriteRule ^pages/privacy\.html$ /privacy [L,R=301]
+  RewriteRule ^pages/cookies\.html$ /cookiebeleid [L,R=301]
+
+  RewriteRule ^over-ons/?$ /pages/about.html [L]
+  RewriteRule ^diensten/?$ /pages/services.html [L]
+  RewriteRule ^contact/?$ /pages/contact.html [L]
+  RewriteRule ^privacy/?$ /pages/privacy.html [L]
+  RewriteRule ^cookiebeleid/?$ /pages/cookies.html [L]
 </IfModule>
 
 <IfModule mod_expires.c>
