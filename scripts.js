@@ -64,7 +64,17 @@ function initActiveNavLink() {
 
 function initScrollReveal() {
     const revealElements = document.querySelectorAll("main section, .hero");
-    revealElements.forEach((el) => el.classList.add("reveal-on-scroll"));
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    revealElements.forEach((el, index) => {
+        el.classList.add("reveal-on-scroll");
+        el.style.transitionDelay = `${Math.min(index * 40, 180)}ms`;
+    });
+
+    if (prefersReducedMotion) {
+        revealElements.forEach((el) => el.classList.add("is-visible"));
+        return;
+    }
 
     if (!("IntersectionObserver" in window)) {
         revealElements.forEach((el) => el.classList.add("is-visible"));
@@ -91,6 +101,9 @@ function initSliders() {
 }
 
 function initHeroMotion() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
     const hero = document.querySelector(".hero");
     const visual = document.querySelector(".hero-visual img");
     const bg = document.querySelector(".hero-bg");
