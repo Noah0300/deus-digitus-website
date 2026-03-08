@@ -1103,6 +1103,7 @@ footer p {
 
     nav a.is-active {
         background: rgba(37, 79, 225, 0.12);
+        color: var(--color-primary-dark);
         text-decoration: none;
     }
 
