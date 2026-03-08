@@ -1,0 +1,26 @@
+﻿{
+  "name": "Deus Digitus",
+  "short_name": "Deus Digitus",
+  "start_url": "/deus-digitus-website/",
+  "scope": "/deus-digitus-website/",
+  "display": "standalone",
+  "background_color": "#eef3ff",
+  "theme_color": "#254FE1",
+  "icons": [
+    {
+      "src": "/deus-digitus-website/assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/deus-digitus-website/assets/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/deus-digitus-website/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
