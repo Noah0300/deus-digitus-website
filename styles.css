@@ -88,6 +88,15 @@ a:hover {
     color: var(--color-secondary);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
 .container,
 main {
     width: min(100% - 2rem, var(--container-width));
@@ -722,6 +731,18 @@ main > section + section::before {
 
 .contact-form .btn {
     width: fit-content;
+}
+
+.contact-form .btn:disabled {
+    opacity: 0.72;
+    cursor: not-allowed;
+}
+
+.form-status {
+    min-height: 1.2em;
+    margin-top: 0.2rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
 }
 
 .form-grid {

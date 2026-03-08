@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollReveal();
     initSliders();
     initHeroMotion();
+    initContactForm();
 });
 
 function initMobileMenu() {
@@ -121,6 +122,55 @@ function initHeroMotion() {
     hero.addEventListener("mouseleave", () => {
         visual.style.transform = "";
         bg.style.transform = "";
+    });
+}
+
+function initContactForm() {
+    const form = document.querySelector("form[data-formspree='true']");
+    if (!form) return;
+
+    const status = form.querySelector(".form-status");
+    const submitButton = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        if (!submitButton) return;
+        submitButton.disabled = true;
+        if (status) status.textContent = "Bezig met versturen...";
+
+        try {
+            const endpoint = form.getAttribute("action") || "";
+            if (endpoint.includes("REPLACE_WITH_YOUR_FORM_ID")) {
+                throw new Error("Formspree endpoint is nog niet ingesteld.");
+            }
+
+            const response = await fetch(endpoint, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json",
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error("Versturen is mislukt.");
+            }
+
+            form.reset();
+            if (status) status.textContent = "Bedankt! Je aanvraag is succesvol verzonden.";
+        } catch (error) {
+            if (status) {
+                status.textContent = "Versturen lukt nu niet. Controleer je Formspree form-ID of probeer later opnieuw.";
+            }
+        } finally {
+            submitButton.disabled = false;
+        }
     });
 }
 
