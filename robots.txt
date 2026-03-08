@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noah0300.github.io/deus-digitus-website/sitemap.xml
