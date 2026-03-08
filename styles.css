@@ -944,6 +944,14 @@ footer p {
     color: var(--color-accent);
 }
 
+footer a {
+    color: var(--color-accent);
+}
+
+footer a:hover {
+    color: var(--color-extra);
+}
+
 .footer-brand {
     display: inline-flex;
     align-items: center;
