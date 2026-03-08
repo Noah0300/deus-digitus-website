@@ -2,32 +2,88 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Deus Digitus</title>
+    <meta name="description" content="Neem contact op met Deus Digitus voor een maatwerk website.">
+    <title>Contact | Deus Digitus</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Deus Digitus</h1>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">Over ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="brand" href="../index.html" aria-label="Deus Digitus home">
+                <img src="../assets/logo.png" alt="Deus Digitus logo">
+                <span>Deus Digitus</span>
+            </a>
+            <nav aria-label="Hoofdmenu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">Over ons</a></li>
+                    <li><a href="services.html">Diensten</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Contact</h2>
-            <p>Dit is de contactpagina.</p>
-            <p>Voeg hier je contactgegevens of contactformulier toe.</p>
+        <section class="contact-hero">
+            <p class="eyebrow">Contact</p>
+            <h1>Vertel ons wat je nodig hebt.</h1>
+            <p>Vul het formulier in en ontvang een reactie met een concreet voorstel voor jouw website.</p>
+        </section>
+
+        <section class="contact-layout">
+            <article class="contact-panel">
+                <h2>Aanvraagformulier</h2>
+                <form class="contact-form" action="mailto:info@deusdigitus.nl" method="post" enctype="text/plain">
+                    <label for="full-name">Naam</label>
+                    <input id="full-name" name="Naam" type="text" autocomplete="name" required>
+
+                    <label for="email">Zakelijke e-mail</label>
+                    <input id="email" name="Email" type="email" autocomplete="email" required>
+
+                    <label for="company">Bedrijfsnaam</label>
+                    <input id="company" name="Bedrijfsnaam" type="text" autocomplete="organization">
+
+                    <label for="phone">Telefoonnummer</label>
+                    <input id="phone" name="Telefoonnummer" type="tel" autocomplete="tel">
+
+                    <label for="service">Gewenste dienst</label>
+                    <select id="service" name="Dienst" required>
+                        <option value="">Selecteer een optie</option>
+                        <option value="Maatwerk website">Maatwerk website</option>
+                        <option value="Website redesign">Website redesign</option>
+                        <option value="SEO optimalisatie">SEO optimalisatie</option>
+                        <option value="Onderhoud en support">Onderhoud en support</option>
+                    </select>
+
+                    <label for="message">Projectomschrijving</label>
+                    <textarea id="message" name="Bericht" rows="6" placeholder="Beschrijf kort je bedrijf, doel en gewenste functionaliteiten." required></textarea>
+
+                    <label class="checkbox-row" for="privacy">
+                        <input id="privacy" name="Akkoord" type="checkbox" required>
+                        <span>Ik ga akkoord met contact over mijn aanvraag.</span>
+                    </label>
+
+                    <button class="btn btn-primary" type="submit">Verstuur aanvraag</button>
+                </form>
+            </article>
+
+            <aside class="contact-aside">
+                <h2>Direct contact</h2>
+                <p>Liever direct mailen? Stuur je vraag of briefing naar:</p>
+                <p><a class="contact-email" href="mailto:info@deusdigitus.nl">info@deusdigitus.nl</a></p>
+                <p>Wij reageren doorgaans binnen 1 werkdag.</p>
+                <a class="btn btn-secondary" href="mailto:info@deusdigitus.nl?subject=Aanvraag%20website%20Deus%20Digitus">Mail direct</a>
+            </aside>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Deus Digitus. Alle rechten voorbehouden.</p>
+        <div class="container">
+            <p>&copy; 2026 Deus Digitus. Alle rechten voorbehouden.</p>
+        </div>
     </footer>
 
     <script src="../scripts.js"></script>
